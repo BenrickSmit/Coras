@@ -32,7 +32,7 @@ if(${BOOL_CREATE_EXECUTABLE})
         add_custom_target(build-time-make-base-exec-directory ALL COMMAND ${CMAKE_COMMAND} -E make_directory ${BASE_DIR})
     	set(DIR_NAME ${CMAKE_SOURCE_DIR}/bin/exec/${CMAKE_CXX_COMPILER_ID}_${CMAKE_SYSTEM_NAME}_${PROJECT_NAME}_${PROJECT_VERSION})
     	add_custom_target(build-time-make-exec-directory ALL COMMAND ${CMAKE_COMMAND} -E make_directory ${DIR_NAME})
-    	
+        
     	## Try and copy the file
     	add_custom_command(
     		TARGET ${PROJECT_NAME} POST_BUILD
@@ -58,7 +58,7 @@ if(${BOOL_CREATE_LIBRARY})
         add_custom_target(build-time-make-base-lib-directory ALL COMMAND ${CMAKE_COMMAND} -E make_directory ${BASE_DIR})
     	set(DIR_NAME ${CMAKE_SOURCE_DIR}/bin/libs/lib_${CMAKE_CXX_COMPILER_ID}_${CMAKE_SYSTEM_NAME}_${PROJECT_NAME}_${PROJECT_VERSION})
     	add_custom_target(build-time-make-lib-directory ALL COMMAND ${CMAKE_COMMAND} -E make_directory ${DIR_NAME})
-    	
+        
     	## Try and copy the file
     	add_custom_command(
     		TARGET ${PROJECT_NAME}_lib POST_BUILD

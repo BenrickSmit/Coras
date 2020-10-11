@@ -8,7 +8,7 @@ echo "${line}"
 echo "${start_var}"
 echo "${line}"
 echo ""
-./run_tests.sh && echo "" && echo "${line}" && echo "${middle_var}" && echo "${line}" && echo "" && ./run_application.sh && ./init_documentation
+./run_tests.sh && echo "" && echo "${line}" && echo "${middle_var}" && echo "${line}" && echo "" && ./run_application.sh && ./init_documentation.sh
 echo ""
 echo "${line}"
 echo "${last_var}"

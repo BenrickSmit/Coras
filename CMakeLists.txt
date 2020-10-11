@@ -3,8 +3,6 @@
 ##------------------------------------------------------------------------------
 ## Set some settings for the builder
 set(BOOL_CREATE_TESTS ON)
-set(BOOL_CREATE_EXECUTABLE ON)
-set(BOOL_CREATE_LIBRARY OFF)
 
 ## Obtain the project's base name and version number
 file(STRINGS "build_info/build_name.txt" STRING_PROJECT_NAME)
@@ -21,6 +19,9 @@ project(${STRING_PROJECT_NAME} VERSION "${STRING_PROJECT_VERSION}")
 include_directories(includes)
 include_directories(lib)
 add_subdirectory(src)
+
+## Required for std::experimental::filesystem used in Coras
+target_link_libraries(${PROJECT_NAME} stdc++fs)
 
 ##------------------------------------------------------------------------------
 ## SECTION: Enable testing on the project
